@@ -1,0 +1,112 @@
+{
+  "navbar": {
+    "home": "Home",
+    "fleet": "Car Fleet",
+    "whyUs": "Why Choose Us",
+    "admin": "Dashboard",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "Rent Your Premium Car in Tunisia.",
+    "subtitle": "Experience comfort, style, and reliability across Tunis, Hammamet, Sousse, and Djerba. Free Airport Delivery available.",
+    "anyCar": "Any Car Type",
+    "economy": "Economy",
+    "compact": "Compact",
+    "sedan": "Sedan",
+    "suv": "SUV",
+    "luxury": "Luxury",
+    "pickup": "Pickup Location",
+    "dropoff": "Return Location",
+    "pickupDate": "Pickup Date",
+    "dropoffDate": "Return Date",
+    "search": "Find Available Cars",
+    "locations": {
+      "tunis": "Tunis",
+      "sfax": "Sfax",
+      "sousse": "Sousse",
+      "djerba": "Djerba"
+    }
+  },
+  "fleet": {
+    "title": "Our Premium Fleet",
+    "subtitle": "Choose from our diverse range of well-maintained vehicles for any occasion.",
+    "bookNow": "Book Now",
+    "available": "Available",
+    "rented": "Rented",
+    "availableInDays": "Available in {{days}} days",
+    "availableSoon": "Available soon",
+    "availableDate": "Available {{date}}"
+  },
+  "whyUs": {
+    "title": "Why Choose MTN Rent Car",
+    "features": [
+      {
+        "title": "Airport Delivery",
+        "desc": "Free delivery to Tunis-Carthage Airport and fast processing."
+      },
+      {
+        "title": "Clean Vehicles",
+        "desc": "Every car is thoroughly checked and sanitized before rental."
+      },
+      {
+        "title": "Flexible Caution",
+        "desc": "Cash or check accepted for vehicle deposit. No credit card required."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Complete Your Booking",
+    "details": "Booking Details",
+    "pickup": "Pickup",
+    "dropoff": "Return",
+    "personalInfo": "Personal Information",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "cancel": "Cancel",
+    "confirm": "Confirm Booking",
+    "total": "Total Amount",
+    "bookingSuccess": "Request Received!",
+    "bookingSuccessMsg": "Our team will call you shortly to confirm availability.",
+    "close": "Close",
+    "totalPriceFor": "Total Price for",
+    "days": "days",
+    "passengers": "Passengers",
+    "bookAnother": "Book Another",
+    "uploadLicense": "Upload Driver Licence",
+    "uploadCin": "Upload CIN Card or Passport (Optional)",
+    "sending": "Sending Request...",
+    "checkAvail": "Check Availability",
+    "failed": "Failed to send request. Please try again."
+  },
+  "whatsapp": {
+    "chat": "Chat with us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? We have answers.",
+    "q1": "What do I need to rent a car?",
+    "a1": "You need a valid driver's license and a CIN card or passport. A cash or check deposit is also required upon delivery.",
+    "q2": "Do you offer airport delivery?",
+    "a2": "Yes, we offer free delivery to Tunis-Carthage Airport. We can also deliver to other locations across Tunisia for a small fee.",
+    "q3": "What is your cancellation policy?",
+    "a3": "You can cancel your booking for free up to 48 hours before the pickup time. Late cancellations may be subject to a fee.",
+    "q4": "Are there any hidden fees?",
+    "a4": "No, we believe in transparent pricing. The price you see is the price you pay. The deposit is fully refundable."
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Don't just take our word for it.",
+    "tourist": "Tourist",
+    "businessTraveler": "Business Traveler",
+    "local": "Local Resident",
+    "1": "Great service! They delivered the car right to Tunis airport. The process was fast and the car was very clean.",
+    "2": "Reliable and affordable. I rented a sedan for a week and had zero issues. Highly recommend MTN Rent Car!",
+    "3": "Transparent pricing with no hidden fees. The customer support was very helpful when I needed to extend my rental."
+  },
+  "footer": {
+    "location": "Our Location",
+    "rights": "All rights reserved."
+  }
+}

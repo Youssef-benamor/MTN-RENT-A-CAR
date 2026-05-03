@@ -1,0 +1,83 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'youssefbenamor1234@gmail.com' ||
+        request.auth.token.email == 'youssefbenamor@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Car Validation
+    function isValidCar(data) {
+      return data.keys().hasAll(['name', 'brand', 'category', 'pricePerDay', 'transmission', 'fuel', 'image', 'passengers', 'isAvailable', 'features'])
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 200
+        && data.brand is string && data.brand.size() > 0
+        && data.category in ['Economy', 'Compact', 'Sedan', 'SUV', 'Luxury', 'Van']
+        && data.pricePerDay is number && data.pricePerDay >= 0
+        && data.transmission in ['Manual', 'Automatic']
+        && data.fuel in ['Petrol', 'Diesel', 'Hybrid', 'Electric']
+        && data.image is string
+        && (data.get('images', []) is list)
+        && data.passengers is int && data.passengers > 0
+        && data.isAvailable is bool
+        && data.features is list;
+    }
+
+    // Booking Validation
+    function isValidBooking(data) {
+      return data.keys().hasAll(['carId', 'carName', 'customerName', 'customerPhone', 'customerEmail', 'pickupDate', 'dropoffDate', 'pickupLocation', 'dropoffLocation', 'totalPrice', 'status', 'createdAt'])
+        && data.carId is string
+        && data.carName is string
+        && data.customerName is string && data.customerName.size() > 0
+        && data.customerPhone is string
+        && data.customerEmail is string && data.customerEmail.matches('^[^@]+@[^@]+\\.[^@]+$')
+        && data.pickupDate is string
+        && data.dropoffDate is string
+        && data.pickupLocation is string
+        && data.dropoffLocation is string
+        && data.totalPrice is number && data.totalPrice >= 0
+        && data.status in ['pending', 'confirmed', 'cancelled', 'active', 'completed']
+        && data.createdAt is string;
+    }
+
+    // Car Rules
+    match /cars/{carId} {
+      allow read: if true; // Publicly viewable fleet
+      allow create, update: if isAdmin() && isValidId(carId) && isValidCar(request.resource.data);
+      allow delete: if isAdmin() && isValidId(carId);
+    }
+
+    // Booking Rules
+    match /bookings/{bookingId} {
+      allow create: if isValidId(bookingId) && isValidBooking(request.resource.data);
+      allow read, delete: if isValidId(bookingId) && (isAdmin() || (isSignedIn() && resource.data.customerEmail == request.auth.token.email));
+      allow update: if isValidId(bookingId) && (isAdmin() || (isSignedIn() && resource.data.customerEmail == request.auth.token.email)) && isValidBooking(request.resource.data);
+    }
+
+    // Admin Rules
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if false; // Only manageable via console or service account
+    }
+  }
+}

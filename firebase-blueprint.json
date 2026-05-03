@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "Car": {
+      "title": "MTN Car",
+      "description": "A rental vehicle in the MTN fleet",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "brand": { "type": "string" },
+        "category": { "type": "string", "enum": ["Economy", "Compact", "Sedan", "SUV", "Luxury", "Van"] },
+        "pricePerDay": { "type": "number" },
+        "transmission": { "type": "string", "enum": ["Manual", "Automatic"] },
+        "fuel": { "type": "string", "enum": ["Petrol", "Diesel", "Hybrid", "Electric"] },
+        "image": { "type": "string" },
+        "images": { 
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "passengers": { "type": "integer" },
+        "isAvailable": { "type": "boolean" },
+        "features": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "location": { "type": "string" },
+        "minDays": { "type": "integer" },
+        "rentedUntil": { "type": "string" }
+      },
+      "required": ["name", "brand", "category", "pricePerDay", "transmission", "fuel", "image", "passengers", "isAvailable", "features"]
+    },
+    "Booking": {
+      "title": "MTN Booking",
+      "description": "A car rental booking for MTN Rent Car",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "carId": { "type": "string" },
+        "carName": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerEmail": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "pickupDate": { "type": "string" },
+        "dropoffDate": { "type": "string" },
+        "pickupLocation": { "type": "string" },
+        "dropoffLocation": { "type": "string" },
+        "flightNumber": { "type": "string" },
+        "totalPrice": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled", "active", "completed"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["carId", "carName", "customerName", "customerEmail", "pickupDate", "dropoffDate", "pickupLocation", "dropoffLocation", "totalPrice", "status", "createdAt"]
+    },
+    "Admin": {
+      "title": "Staff Admin",
+      "description": "Users with administrative access",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "staff"] }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/cars/{carId}": {
+      "schema": "Car",
+      "description": "Real-time fleet inventory"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Client reservation requests"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Authorized personnel access control"
+    }
+  }
+}

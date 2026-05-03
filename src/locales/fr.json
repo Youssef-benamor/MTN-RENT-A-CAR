@@ -1,0 +1,112 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "fleet": "Flotte",
+    "whyUs": "Pourquoi Nous",
+    "admin": "Tableau de bord",
+    "login": "Connexion",
+    "logout": "Déconnexion"
+  },
+  "hero": {
+    "title": "Louez votre voiture premium en Tunisie.",
+    "subtitle": "Profitez du confort, du style et de la fiabilité à Tunis, Hammamet, Sousse et Djerba. Livraison gratuite à l'aéroport disponible.",
+    "anyCar": "Tout type de voiture",
+    "economy": "Économique",
+    "compact": "Compacte",
+    "sedan": "Berline",
+    "suv": "SUV",
+    "luxury": "Luxe",
+    "pickup": "Lieu de prise en charge",
+    "dropoff": "Lieu de restitution",
+    "pickupDate": "Date de prise en charge",
+    "dropoffDate": "Date de restitution",
+    "search": "Trouver des voitures",
+    "locations": {
+      "tunis": "Tunis",
+      "sfax": "Sfax",
+      "sousse": "Sousse",
+      "djerba": "Djerba"
+    }
+  },
+  "fleet": {
+    "title": "Notre Flotte",
+    "subtitle": "Choisissez parmi notre gamme diversifiée de véhicules bien entretenus.",
+    "bookNow": "Réserver",
+    "available": "Disponible",
+    "rented": "Louée",
+    "availableInDays": "Disponible dans {{days}} jours",
+    "availableSoon": "Disponible bientôt",
+    "availableDate": "Disponible le {{date}}"
+  },
+  "whyUs": {
+    "title": "Pourquoi Choisir MTN Rent Car",
+    "features": [
+      {
+        "title": "Livraison à l'Aéroport",
+        "desc": "Livraison gratuite à l'aéroport de Tunis-Carthage et traitement rapide."
+      },
+      {
+        "title": "Véhicules Propres",
+        "desc": "Chaque voiture est soigneusement vérifiée et désinfectée avant la location."
+      },
+      {
+        "title": "Caution Flexible",
+        "desc": "Espèces ou chèques acceptés pour le dépôt du véhicule. Pas de carte de crédit requise."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Terminer votre réservation",
+    "details": "Détails de réservation",
+    "pickup": "Prise en charge",
+    "dropoff": "Retour",
+    "personalInfo": "Informations personnelles",
+    "fullName": "Nom Complet",
+    "email": "Adresse Email",
+    "phone": "Numéro de téléphone",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "total": "Montant Total",
+    "bookingSuccess": "Demande Reçue !",
+    "bookingSuccessMsg": "Notre équipe vous appellera sous peu pour confirmer la disponibilité.",
+    "close": "Fermer",
+    "totalPriceFor": "Prix total pour",
+    "days": "jours",
+    "passengers": "Passagers",
+    "bookAnother": "Réserver une autre",
+    "uploadLicense": "Télécharger le Permis de Conduire",
+    "uploadCin": "Télécharger CIN ou Passeport (Optionnel)",
+    "sending": "Envoi en cours...",
+    "checkAvail": "Vérifier la Disponibilité",
+    "failed": "L'envoi a échoué. Veuillez réessayer."
+  },
+  "whatsapp": {
+    "chat": "Discutez avec nous"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Vous avez des questions ? Nous avons les réponses.",
+    "q1": "De quoi ai-je besoin pour louer une voiture ?",
+    "a1": "Vous avez besoin d'un permis de conduire valide et d'une carte d'identité ou d'un passeport. Un dépôt en espèces ou par chèque est également requis à la livraison.",
+    "q2": "Proposez-vous la livraison à l'aéroport ?",
+    "a2": "Oui, nous offrons la livraison gratuite à l'Aéroport de Tunis-Carthage. Nous pouvons également livrer dans d'autres régions de la Tunisie moyennant un petit supplément.",
+    "q3": "Quelle est votre politique d'annulation ?",
+    "a3": "Vous pouvez annuler votre réservation gratuitement jusqu'à 48 heures avant l'heure de prise en charge.",
+    "q4": "Y a-t-il des frais cachés ?",
+    "a4": "Non, nous croyons en la transparence des prix. Le prix que vous voyez est le prix que vous payez. La caution est entièrement remboursable."
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Clients",
+    "subtitle": "Ne vous contentez pas de nous croire sur parole.",
+    "tourist": "Touriste",
+    "businessTraveler": "Voyageur d'Affaires",
+    "local": "Résident Local",
+    "1": "Excellent service ! Ils ont livré la voiture directement à l'aéroport de Tunis. Le processus a été rapide et la voiture était très propre.",
+    "2": "Fiable et abordable. J'ai loué une berline pour une semaine sans aucun problème. Je recommande vivement MTN Rent Car !",
+    "3": "Une tarification transparente, sans frais cachés. Le support client a été très utile lorsque j'ai eu besoin de prolonger ma location."
+  },
+  "footer": {
+    "location": "Notre Emplacement",
+    "rights": "Tous droits réservés."
+  }
+}
