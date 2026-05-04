@@ -2,10 +2,10 @@ export interface Car {
   id: string;
   name: string;
   brand: string;
-  category: 'Economy' | 'Compact' | 'Sedan' | 'SUV' | 'Luxury' | 'Van';
+  category: "Economy" | "Compact" | "Sedan" | "SUV" | "Luxury" | "Van";
   pricePerDay: number;
-  transmission: 'Manual' | 'Automatic';
-  fuel: 'Petrol' | 'Diesel' | 'Hybrid' | 'Electric';
+  transmission: "Manual" | "Automatic";
+  fuel: "Petrol" | "Diesel" | "Hybrid" | "Electric";
   image: string;
   images?: string[];
   passengers: number;
@@ -28,8 +28,12 @@ export interface Booking {
   pickupLocation: string;
   dropoffLocation: string;
   flightNumber?: string;
+  licenseUrl?: string;
+  identityUrl?: string;
   totalPrice: number;
-  status: 'pending' | 'confirmed' | 'cancelled' | 'active' | 'completed';
+  promoCode?: string;
+  promoDiscount?: number;
+  status: "pending" | "confirmed" | "cancelled" | "active" | "completed";
   createdAt: string;
 }
 

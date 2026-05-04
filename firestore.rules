@@ -19,6 +19,7 @@ service cloud.firestore {
       return isSignedIn() && (
         request.auth.token.email == 'youssefbenamor1234@gmail.com' ||
         request.auth.token.email == 'youssefbenamor@gmail.com' ||
+        request.auth.token.email == 'ayoubbouazizi619@gmail.com' ||
         exists(/databases/$(database)/documents/admins/$(request.auth.uid))
       );
     }
@@ -62,22 +63,26 @@ service cloud.firestore {
 
     // Car Rules
     match /cars/{carId} {
-      allow read: if true; // Publicly viewable fleet
-      allow create, update: if isAdmin() && isValidId(carId) && isValidCar(request.resource.data);
-      allow delete: if isAdmin() && isValidId(carId);
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
     }
 
-    // Booking Rules
+    // Booking Rules - FIXED: No isValidId check for read
     match /bookings/{bookingId} {
-      allow create: if isValidId(bookingId) && isValidBooking(request.resource.data);
-      allow read, delete: if isValidId(bookingId) && (isAdmin() || (isSignedIn() && resource.data.customerEmail == request.auth.token.email));
-      allow update: if isValidId(bookingId) && (isAdmin() || (isSignedIn() && resource.data.customerEmail == request.auth.token.email)) && isValidBooking(request.resource.data);
+      allow create: if isValidBooking(request.resource.data);
+      allow read, update: if isAdmin();
+      allow delete: if false;
     }
 
     // Admin Rules
     match /admins/{adminId} {
       allow read: if isSignedIn();
-      allow write: if false; // Only manageable via console or service account
+      allow write: if false;
+    }
+
+    // Test
+    match /test/connection {
+      allow read: if true;
     }
   }
 }

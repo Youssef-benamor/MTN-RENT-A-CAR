@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -9,12 +9,23 @@
 @layer base {
   body {
     @apply bg-white text-slate-900 font-sans antialiased;
-    background-image: 
-      radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 40%),
-      radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.03), transparent 30%);
+    background-image:
+      radial-gradient(
+        circle at top right,
+        rgba(37, 99, 235, 0.05),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(59, 130, 246, 0.03),
+        transparent 30%
+      );
     background-attachment: fixed;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-heading tracking-tight font-medium;
   }
   .glass {
@@ -22,3 +33,21 @@
   }
 }
 
+@layer utilities {
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
